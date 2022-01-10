@@ -1,3 +1,67 @@
-.message {
+.container{
+    display: flex;
+    align-items: flex-end;
+}
 
+.avatar{
+    width: 35px;
+    height: 35px;
+}
+
+.avatarContainer{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.containerMessage {
+    padding: 10px;
+    background-color: #082103;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.containerMessage::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 17px;
+    width: 17px;
+    background-color: #082103;
+    left: -14px;
+
+}.containerMessage::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    left: -25px;
+    border-radius: 50%;
+}
+
+.name {
+    color:#635f91;
+    font-size: 15px;
+    font-weight: normal;
+}
+.message {
+    color:#cce0c7;
+    font-size: 13px;
+}
+
+.nameAndMessage {
+    margin-right: 8px;
+}
+
+.time {
+    color: #487e3f;
+    font-size: 14px;
+}
+.emptiness {
+    height: 5px;
 }
