@@ -8,7 +8,7 @@ export type AffairPriorityType = 'low' | 'high' | 'middle'
 export type AffairType = {
     _id: number
     name: string
-    priority: string
+    priority: FilterType
 
 } // need to fix any
 export type FilterType = 'all' | AffairPriorityType
@@ -34,24 +34,21 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): a
     if (filter === 'high') {
         return affairs.filter(f => f.priority === 'high')
     }
-
+   return affairs
 }
 export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => {
-    debugger
     let newArray = affairs.filter(t => {
         return t._id !== _id
     })
-    debugger
     return newArray
 }
 
 function HW2() {
     const [affairs, setAffairs] = useState<Array<AffairType>>(defaultAffairs) // need to fix any
-    const [filter, setFilter] = useState<FilterType>('all')
+    const [filter, setFilter] = useState <FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = (_id: number) => {
-        debugger
         setAffairs(deleteAffair(affairs, _id))
         setFilter(filteredAffairs(affairs, filter))// need to fix any    }
     }
